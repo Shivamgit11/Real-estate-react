@@ -110,9 +110,11 @@ const HouseContextProvider = ({ children }) => {
     });
 
     setTimeout(() => {
-      return newHouse.length < 1 ? setHouses([]) : setHouses(newHouse);
-      setLoading(false);
-    });
+      return (
+        newHouse.length < 1 ? setHouses([]) : setHouses(newHouse),
+        setLoading(false)
+      );
+    }, 1000);
   };
   return (
     <HouseContext.Provider
@@ -128,6 +130,7 @@ const HouseContextProvider = ({ children }) => {
         houses,
         loading,
         handlClick,
+        loading,
       }}
     >
       {children}
