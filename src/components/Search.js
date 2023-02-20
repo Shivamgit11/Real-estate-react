@@ -11,6 +11,7 @@ import { HouseContext } from "./HouseContext";
 const Search = () => {
   // const {houses} = useContext(HouseContext);
   // console.log(houses);
+  const {handlClick} = useContext(HouseContext)
   return (
     <div
       className="px-[30px] py-6 max-w-[1170px]
@@ -20,7 +21,7 @@ const Search = () => {
       <CountryDropdown />
       <PropertyDropdown />
       <PriceRangeDropdown />
-      <button
+      <button onClick={() => handlClick()}
         className="bg-violet-700 hover:bg-violet-800 transition w-full lg:max-w-[162px] h-16 rounded-lg flex justify-center
       items-center text-white text-lg"
       >

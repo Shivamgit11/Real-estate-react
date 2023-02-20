@@ -24,7 +24,7 @@ const HouseContextProvider = ({ children }) => {
 
     //removing duplicating country
     const uniqueCountru = ['Location (any)', ...new Set(allCountries)];
-    console.log(uniqueCountru);
+    // console.log(uniqueCountru);
     setCountries(uniqueCountru);
   }, [])
 
@@ -38,9 +38,13 @@ const HouseContextProvider = ({ children }) => {
 
     //removing duplicating country
     const UniqueProperty = ['Location (any)', ...new Set(allproperty)];
-    console.log(UniqueProperty);
+    // console.log(UniqueProperty);
     setProperties(UniqueProperty);
-  })
+  }, []);
+
+  const handlClick = () => {
+    console.log(country, property, price);
+  }
   return <HouseContext.Provider value={{
     country,
     setCountry,
@@ -52,6 +56,7 @@ const HouseContextProvider = ({ children }) => {
     setPrice,
     houses,
     loading,
+    handlClick,
   }}>
     {children}</HouseContext.Provider>;
 };
